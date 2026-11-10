@@ -1,0 +1,43 @@
+mkdir Backend
+mkdir Frontend 
+cd Backend
+   python -m venv .venv
+   .venv/Scripts/activate
+   python -m pip install --upgrade pip
+   pip install django djangorestframework django-cors-headers djangorestframework-simplejwt mysqlclient Pillow django-filter python-decouple
+
+   django-admin startproject config
+   cd config
+   python manage.py startapp accounts
+   python manage.py startapp companies
+   python manage.py startapp jobs
+   python manage.py startapp applications
+   python manage.py startapp saved_jobs
+   
+
+   Look like this 
+   =======================
+   backend/
+    │
+    ├── .venv/
+    │
+    ├── config/
+    │   ├── __init__.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   ├── asgi.py
+    │   └── wsgi.py
+    │
+    ├── accounts/
+    ├── companies/
+    ├── jobs/
+    ├── applications/
+    ├── saved_jobs/
+    │
+    └── manage.py
+
+    get secret key for .env
+    ========================
+     python -c "from django.core.management.utils 
+    import get_random_secret_key;
+    print(get_random_secret_key())"
